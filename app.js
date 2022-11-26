@@ -12,6 +12,8 @@ var empleadosRouter = require('./routes/empleados.router');
 var usuariosRouter = require('./routes/usuarios.router');
 var comprasRouter = require('./routes/compras.router')
 var productosRouter = require('./routes/productos.router')
+var productosPublicRouter = require('./routes/productosPublic.router')
+
 
 var app = express();
 
@@ -27,6 +29,7 @@ app.use(cors());
 database.mongoConnect();
 
 app.use('/usuarios', usuariosRouter);
+app.use('/productos/public', productosPublicRouter);
 app.use(auth)
 
 //Routers
